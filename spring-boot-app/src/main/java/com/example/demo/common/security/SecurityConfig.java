@@ -27,7 +27,7 @@ public class SecurityConfig {
             // But OAuth2 flow needs session before redirecting, Spring handles it implicitly.
             .sessionManagement(session -> session.sessionCreationPolicy(SessionCreationPolicy.STATELESS))
             .authorizeHttpRequests(authz -> authz
-                .requestMatchers("/", "/login**", "/oauth2/**").permitAll()
+                .requestMatchers("/", "/login**", "/oauth2/**", "/api/**").permitAll()
                 .anyRequest().authenticated()
             )
             .oauth2Login(oauth2 -> oauth2

@@ -15,9 +15,12 @@ public class Flashcard {
     @JoinColumn(name = "deck_id")
     private Deck deck;
 
+    @Column(columnDefinition = "NVARCHAR(255)")
     private String vocabulary;
+    @Column(columnDefinition = "NVARCHAR(255)")
     private String meaning;
+    @Column(columnDefinition = "NVARCHAR(255)")
     private String phonetic;
-    @Column(columnDefinition = "TEXT")
+    @Column(columnDefinition = "NVARCHAR(MAX)")
     private String exampleSentence;
 }
